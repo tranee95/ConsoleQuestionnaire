@@ -14,7 +14,8 @@ namespace ConsoleQuestionnaire.Commands
             _commands = new List<ICommand>
             {
                 new HelpCommand(this, receiver),
-                new NewProfileCommand(receiver)
+                new NewProfileCommand(receiver),
+                new ExitCommand()
             };
         }
 

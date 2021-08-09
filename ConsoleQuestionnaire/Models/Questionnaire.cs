@@ -1,13 +1,24 @@
 ﻿using System;
+using System.Collections.Generic;
+using ConsoleQuestionnaire.Models.Questions;
 
 namespace ConsoleQuestionnaire.Models
 {
     public class Questionnaire
     {
-        public string Fio { get; set; }
-        public DateTime DateOfBirth { get; set; }
-        public string FavoriteProgrammingLanguage { get; set; }
-        public string Experience { get; set; }
-        public string PhoneNumber { get; set; }
+        public Questionnaire()
+        {
+            Questions = new List<Question>
+            {
+                new FullName(),
+                new DateOfBirth()
+            };
+        }
+
+        public string Name { get; set; }
+
+        public List<Question> Questions { get; set; }
+
+        public DateTime CreateQuestionnaireDate { get; set; }
     }
 }

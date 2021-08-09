@@ -14,11 +14,13 @@ namespace ConsoleQuestionnaire
             var instance = ActivatorUtilities.CreateInstance<CommandsGroup>(host.Services);
             
             LoggerManager.Build(configuration);
-
-            Console.Write("Выберите действие > ");
-            instance.FindAndExecute(Console.ReadLine());
-
-            Console.ReadKey();
+            
+            while (true)
+            {
+                Console.Write("Выберите действие > ");
+                instance.FindAndExecute(Console.ReadLine());
+                Console.WriteLine(string.Empty);
+            }
         }
     }
 }
